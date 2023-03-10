@@ -11,7 +11,7 @@ datas SEGMENT WORD PUBLIC 'DATA'
 datas ENDS
 
 ;описал сегмент кода
-codes SEGMENT PARA PUBLIC 'CODE'
+codes SEGMENT PARA  'CODE'
 	assume cs:codes, ds:datas
 
 calc_diff:
@@ -31,9 +31,10 @@ calc_diff:
 	mov bl, [si + 2]
 
 	; вычисляю разность 2-й и 3-й цифр (результат в cl)
+	; если отрицательно, то флаг ZF = 1
 	sub cl, bl
 
-	; условие: если нет знака, то есть положительно, 
+	; условие: если нет знака, то есть положительно (флаг ZF=0), 
 	; то переход к метке positive
 	jns positive
 

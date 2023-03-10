@@ -11,7 +11,7 @@ stack SEGMENT PARA STACK 'STACK'
 stack ENDS
 
 ;описал сегмент кода
-codes SEGMENT PARA PUBLIC 'CODE'
+codes SEGMENT PARA  'CODE'
 	assume CS:codes, SS:stack
 
 input: 
